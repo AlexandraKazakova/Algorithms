@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Algorithms.iml" filepath="$PROJECT_DIR$/.idea/Algorithms.iml" />
       <module fileurl="file://$PROJECT_DIR$/HW1/HW1.iml" filepath="$PROJECT_DIR$/HW1/HW1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lec/Lec.iml" filepath="$PROJECT_DIR$/Lec/Lec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw2/hw2.iml" filepath="$PROJECT_DIR$/hw2/hw2.iml" />
     </modules>
   </component>
 </project>
