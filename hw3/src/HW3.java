@@ -3,26 +3,19 @@ import java.util.Iterator;
 public class HW3 {
     public static void main(String[] args) {
         ListNode test1 = new ListNode(3, new ListNode(4, new ListNode(1, new ListNode(2, new ListNode(5)))));
-        ListNode test2 = new ListNode(3, new ListNode(4, new ListNode(1, new ListNode(2, new ListNode(5)))));
-        ListNode test3 = new ListNode(3, new ListNode(4, new ListNode(1, new ListNode(2, new ListNode(5)))));
+        ListNode test2 = new ListNode(5, new ListNode(6, new ListNode(2, new ListNode(4, new ListNode(9)))));
 
         ListNode result1 = ListNodeUtils.addFirst(4, test1);
-        ListNode result2 = ListNodeUtils.removeFirst(test2);
-        ListNode result3 = reverse(test3);
+        ListNode result2 = ListNodeUtils.removeFirst(test1);
+        ListNode result3 = reverse(test2);
 
-        for (Integer integer : result1) {
-            System.out.print(integer + " ");
-        }
-        System.out.println();
-        for (Integer integer : result2) {
-            System.out.print(integer + " ");
-        }
+        ListNodeIterator li = new ListNodeIterator();
+        li.printNode(test1);
 
-        System.out.println();
-        for (Integer integer : result3) {
-            System.out.print(integer + " ");
-        }
-
+        li.printNode(result1);
+        li.printNode(result2);
+        li.printNode(result3);
+        li.printNode(test2);
     }
 
     public static class ListNode implements Iterable<Integer> {
@@ -50,6 +43,7 @@ public class HW3 {
     public static class ListNodeIterator implements Iterator<Integer> {
         private ListNode node;
 
+        public ListNodeIterator(){}
         public ListNodeIterator(ListNode node) {
             this.node = node;
         }
@@ -64,6 +58,13 @@ public class HW3 {
             int toReturn = node.val;
             node = node.next;
             return toReturn;
+        }
+
+        public void printNode(ListNode list){
+            for (Integer integer : list) {
+                System.out.print(integer + " ");
+            }
+            System.out.println();
         }
     }
 
@@ -99,6 +100,7 @@ public class HW3 {
                 current = next;
             }
         }
+
         return head;
     }
 }
