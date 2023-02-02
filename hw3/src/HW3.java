@@ -2,20 +2,21 @@ import java.util.Iterator;
 
 public class HW3 {
     public static void main(String[] args) {
-        ListNode test1 = new ListNode(3, new ListNode(4, new ListNode(1, new ListNode(2, new ListNode(5)))));
-        ListNode test2 = new ListNode(5, new ListNode(6, new ListNode(2, new ListNode(4, new ListNode(9)))));
-
-        ListNode result1 = ListNodeUtils.addFirst(4, test1);
-        ListNode result2 = ListNodeUtils.removeFirst(test1);
-        ListNode result3 = reverse(test2);
+        ListNode test = new ListNode(3, new ListNode(4, new ListNode(1, new ListNode(2, new ListNode(5)))));
 
         ListNodeIterator li = new ListNodeIterator();
-        li.printNode(test1);
 
-        li.printNode(result1);
-        li.printNode(result2);
-        li.printNode(result3);
-        li.printNode(test2);
+        li.printNode(test);
+
+        test = ListNodeUtils.addFirst(4, test);
+        li.printNode(test);
+
+        test = ListNodeUtils.removeFirst(test);
+        li.printNode(test);
+
+        test = reverse(test);
+        li.printNode(test);
+
     }
 
     public static class ListNode implements Iterable<Integer> {
