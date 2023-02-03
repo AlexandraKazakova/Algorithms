@@ -15,7 +15,7 @@ public class Tree<T extends Comparable<T>> {
 
         tree.dfs(it -> System.out.print(it + " "));
 
-        System.out.println(tree.contains(13));
+        System.out.println(tree.contains(33));
     }
 
     private Node root;
@@ -65,50 +65,18 @@ public class Tree<T extends Comparable<T>> {
     }
 
     public boolean contains(T value) {
-        boolean s = false;
-        if (!(root.value == value)) {
-            int compare = value.compareTo(root.value);
+        Node current = root;
+        while (current.value != value) {
+            int compare = value.compareTo(current.value);
             if (compare < 0) {
-                if (root.left == null) {
-                    return s;
-                }
-                root = root.left;
-                contains(value);
+                current = current.left;
+            } else {
+                current = current.right;
             }
-            if (compare > 0) {
-                if (root.right == null) {
-                    return s;
-                }
-                root = root.right;
-                contains(value);
+            if (current == null) {
+                return false;
             }
         }
-        if (root.value == value) {
-            s = true;
-        }
-        return s;
+        return true;
     }
-
-//    public boolean containsV1(Node current, T value) {
-//        boolean s = false;
-//        if (!(current.value == value)) {
-//            int compare = value.compareTo(current.value);
-//            if (compare < 0) {
-//                if (current.left == null) {
-//                    return s;
-//                }
-//                containsV1(current.left, value);
-//            }
-//            if (compare > 0) {
-//                if (current.right == null) {
-//                    return s;
-//                }
-//                containsV1(current.right, value);
-//            }
-//        }
-//        if (current.value == value) {
-//            s = true;
-//        }
-//        return s;
-//    }
 }
