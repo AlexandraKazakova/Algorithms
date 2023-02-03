@@ -16,8 +16,6 @@ public class Tree<T extends Comparable<T>> {
         tree.dfs(it -> System.out.print(it + " "));
 
         System.out.println(tree.contains(13));
-
-        tree.dfs(it -> System.out.print(it + " "));
     }
 
     private Node root;
